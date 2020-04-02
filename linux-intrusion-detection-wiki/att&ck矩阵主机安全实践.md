@@ -12,8 +12,8 @@ MITRE在2013年推出了ATT&CK模型，根据真实的观察数据来描述和�
 发现入侵迹象的分析引擎
 于分析引擎的相应部件
 ```
-![52c1338100b4c4e7d7fa16c537c4cd12.png](en-resource://database/8842:1)
-![6fe97a2f3570a60f360957c38fc6af56.png](en-resource://database/8846:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E5%85%A5%E4%BE%B5%E6%A8%A1%E5%9D%97.png)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/ossec%E6%9E%B6%E6%9E%84.png)
 
 ### 入侵检测的分类
 根据检测所用数据的来源不同，可将入侵检测系统分为以下三类：
