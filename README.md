@@ -24,7 +24,7 @@
 [linux安全](https://github.com/redbullsecteam/intrusion-detection-wiki/tree/master/linux-intrusion-detection-wiki)
 [安全架构](https://github.com/redbullsecteam/intrusion-detection-wiki/tree/master/security-Architecture-wiki)
 [移动安全](https://github.com/redbullsecteam/intrusion-detection-wiki/tree/master/mobile-intrusion-detection-wiki)
-[安全响应]（https://github.com/redbullsecteam/intrusion-detection-wiki/tree/master/Emergency-Response-wiki)
+
 
 此内容可迭代更新
 ### 4.提交方式
