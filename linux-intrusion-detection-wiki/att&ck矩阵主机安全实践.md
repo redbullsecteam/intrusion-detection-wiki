@@ -115,7 +115,7 @@ audit主要分三个模块：
 snoopy轻量级的lib库，用来激励系统中所有执行过的命令以及参数，实际使用场景中结合snoopy和rsyslog收集所有主机的历史执行命令，snoopy 即是通过 preload 的方式在程序进行 execv() 和 execve() 系统调用的时候记录下所有需要的信息，audit同snoopy，通过监控execve系统调用，同样实现用户的操纵记录，大部分检测通过检测非ROOT用户执行的命令以及进行威胁建模。
 ### 侦查内容
 一次完整的网络渗透，主要分技术业务与信息分析业务。技术侦查能力为业务侦查提供强大的支撑与保证。业务侦查能力为技术业务提供关键的目标信息以及逻辑思维，在强大的HW中，还记得那个在电线杠下的兄弟吗？
-![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E4%BE%A6%E6%9F%A5%E5%86%85%E5%AE%B9.png
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E4%BE%A6%E6%9F%A5%E5%86%85%E5%AE%B9.png)
 
 ### 凭证内容
 获取凭证主要从根据用户习惯，从文件中、配置和历史记录中获取凭证，也可通过暴力破解和抓取内存中的明文密码
