@@ -1,11 +1,5 @@
 
 # Linux 入侵检测中的进程创建监控
-`
-https://medium.com/palantir/auditing-with-osquery-part-one-introduction-to-the-linux-audit-framework-217967cec406`
-
-`
-https://mp.weixin.qq.com/s?__biz=MzI4MzI4MDg1NA==&mid=2247483953&idx=1&sn=1c34aba130041bc6f4c6afdaf19eb1c7&scene=21#wechat_redirect`
-
 
 ## 0x01 常见方式
 目前来看，常见的获取进程创建的信息的方式有以下四种：
@@ -38,7 +32,7 @@ return old_execve(filename, argv, envp);
 2. 生成动态链接库：`gcc hook.c-fPIC-shared-o hook.so`
 3. 将上面生成的动态链接库注册成 preload ：`echo'/path/to/hook.so'>/etc/ld.so.preload`
 4.退出当前 shell 并重新登录，执行命令即可看到我们编写的代码已被执行：
-![eebf2557cafd851cb9986495069e2cb6.png](en-resource://database/8972:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/id.png)
 
 使用条件该方法没有什么条件限制，只需有 root 权限即可（做入侵监控程序 root 权限是必需的，后面的几种方法默认也都是在 root 权限下）。
 ### 优缺点
@@ -54,17 +48,17 @@ return old_execve(filename, argv, envp);
 首先了解一下 Netlink 是什么，Netlink 是一个套接字家族（socket family），它被用于内核与用户态进程以及用户态进程之间的 IPC 通信，我们常用的 ss命令就是通过 Netlink 与内核通信获取的信息。Netlink Connector 是一种 Netlink ，它的 Netlink 协议号是 NETLINK_CONNECTOR，其代码位于 
 `https://github.com/torvalds/linux/tree/master/drivers/connector`，其中 connectors.c 和 cnqueue.c 是 Netlink Connector 的实现代码，而 cnproc.c 是一个应用实例，名为进程事件连接器，我们可以通过该连接器来实现对进程创建的监控。
 系统架构：
-![8d804fc061ff86c8d3f76d1f05f39c15.png](en-resource://database/8974:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/Connector.png)
 
 具体流程：
-![3e34e6d752ccdcdbaa1d083051ea2d7c.png](en-resource://database/8976:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E6%B5%81%E7%A8%8B.png)
 
 图中的 ncp 为 Netlink Connector Process，即用户态我们需要开发的程序。
 Demo
 在 Github 上已有人基于进程事件连接器开发了一个简单的进程监控程序：
 https://github.com/ggrandes-clones/pmon/blob/master/src/pmon.c其核心函数为以下三个：
 nl_connect：与内核建立连接set_proc_ev_listen：订阅进程事件handle_proc_ev：处理进程事件
-其执行流程正如上图所示。我们通过 gcc pmon.c-o pmon生成可执行程序，然后执行该程序即可看到效果：![a7b23aaa575c6a69b9988c51075e4eb0.png](en-resource://database/8978:1)
+其执行流程正如上图所示。我们通过 gcc pmon.c-o pmon生成可执行程序，然后执行该程序即可看到效果：![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/pmon.png)
 
 获取到的 pid 之后，再去 /proc/<pid>/目录下获取进程的详细信息即可。
 使用条件
@@ -87,7 +81,7 @@ nl_connect：与内核建立连接set_proc_ev_listen：订阅进程事件handle_
 
 Linux Audit 是 Linux 内核中用来进行审计的组件，可监控系统调用和文件访问，具体架构如下
 图片描述
-![04970a3ee443ff22f4400c57682480a6.png](en-resource://database/8988:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/audit.png)
 
 1.用户通过用户态的管理进程配置规则（例如图中的 go-audit ，也可替换为常用的 auditd ），并通过 Netlink 套接字通知给内核。
 
