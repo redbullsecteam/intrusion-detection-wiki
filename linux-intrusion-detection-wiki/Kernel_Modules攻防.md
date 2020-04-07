@@ -36,14 +36,14 @@ Makefile文件
 ```
  
 编译完成之后能够看到模块文件：
-
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/meke_Helloworld.png)
 ### 常见模块功能
 insmod ./hello.ko #加载
 rmmod hello #删除
 rmmod ./hello.ko#删除
 lsmod查看模块是否被加载
  
-
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/insmod_Helloworld.png)
  
 
 ## 监控
