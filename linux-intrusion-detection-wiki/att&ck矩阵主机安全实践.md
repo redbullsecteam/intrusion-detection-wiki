@@ -12,8 +12,8 @@ MITRE在2013年推出了ATT&CK模型，根据真实的观察数据来描述和�
 发现入侵迹象的分析引擎
 于分析引擎的相应部件
 ```
-![52c1338100b4c4e7d7fa16c537c4cd12.png](en-resource://database/8842:1)
-![6fe97a2f3570a60f360957c38fc6af56.png](en-resource://database/8846:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E5%85%A5%E4%BE%B5%E6%A8%A1%E5%9D%97.png)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/ossec%E6%9E%B6%E6%9E%84.png)
 
 ### 入侵检测的分类
 根据检测所用数据的来源不同，可将入侵检测系统分为以下三类：
@@ -91,7 +91,7 @@ CPU信息
 获取信息的统计量后，进行系统运行轮廓定位，单统计量和多统计量对用户行为进行分析
 
 本文的重点是针对已知攻击的矩阵检测，先放一张图
-![6351d77ee483222ffcec6c459e2818c8.png](en-resource://database/8850:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/att%26ck.png)
 ## 0x03：主机信息采集
 在调研了一些主机监控的采集器后，采用了最经典的audit，为了便于数据的标准化输出，采用auditbeat，满足ATT&CK矩阵的70%-80%的检测需求，通sysmon相关能力
 audit主要分三个模块：
@@ -115,34 +115,34 @@ audit主要分三个模块：
 snoopy轻量级的lib库，用来激励系统中所有执行过的命令以及参数，实际使用场景中结合snoopy和rsyslog收集所有主机的历史执行命令，snoopy 即是通过 preload 的方式在程序进行 execv() 和 execve() 系统调用的时候记录下所有需要的信息，audit同snoopy，通过监控execve系统调用，同样实现用户的操纵记录，大部分检测通过检测非ROOT用户执行的命令以及进行威胁建模。
 ### 侦查内容
 一次完整的网络渗透，主要分技术业务与信息分析业务。技术侦查能力为业务侦查提供强大的支撑与保证。业务侦查能力为技术业务提供关键的目标信息以及逻辑思维，在强大的HW中，还记得那个在电线杠下的兄弟吗？
-![0f6fa96216bfce659fb7fc082efe93e6.png](en-resource://database/8852:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E4%BE%A6%E6%9F%A5%E5%86%85%E5%AE%B9.png)
 
 ### 凭证内容
 获取凭证主要从根据用户习惯，从文件中、配置和历史记录中获取凭证，也可通过暴力破解和抓取内存中的明文密码
-![c76845f7b49c21d8d977a6484e8588c1.png](en-resource://database/8868:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E5%87%AD%E8%AF%81%E5%86%85%E5%AE%B9.png)
 
 ### 命令和控制
 命令行界面提供了一种与计算机系统进行交互的方式，执行的命令以命令行界面进程的当前权限级别运行，在进攻中所采取的所有战术中，应用最广泛的战术莫过于“执行”，而应用白名单是缓解恶意软件攻击时最有用的控制措施，红衣教主讲述故事的时候说到，十年前我们哪会做什么网络安全，做了一层白名单，不在我信任列表里的都杀，没想到效果还挺好
-![737dc486d2ddc791ec29d2b79def539a.png](en-resource://database/8870:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E5%91%BD%E4%BB%A4%E5%92%8C%E6%8E%A7%E5%88%B6.png)
 
 ###  持久化
 Linux作为服务器和IoT设备使用的主要操作系统，获取权限后通常需要长期驻留于目标操作系统以达到获利目的，下面列举了常见的后门和驻留持久化技术，如增加超级用户账号、放置SUID shell，定时任务、共享库文件、LKM模块等，在应急响应中持久化是最应该关注的战术之一，也是一个比较好的切入点
-![42cc97d3bdb2fae56575f7ff2b3d9718.png](en-resource://database/8858:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E6%8C%81%E4%B9%85%E5%8C%96.png)
 
 ### 权限提升：
 利用系统漏洞达到root级访问权是攻击者核心目标，权限提升，从入门到放弃，但对于检测来说通过检测子进程uid的是否变为0即可
-![0429c773215ad68372b8fa7c76ef6ccd.png](en-resource://database/8872:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87.png)
 
 ### 横向移动
 攻击者在利用单个系统漏洞后，通常会尝试在网络内进行横向移动，横向移动对于域渗透，攻击手法相对较多，在内网中，环境相当较干净，检测通用攻击，能达到较好的效果，自动化攻击的时代，躺着中枪，防不胜防
-![c04f83bb11f754aad98bc7f706b6a534.png](en-resource://database/8862:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E6%A8%AA%E5%90%91%E7%A7%BB%E5%8A%A8.png)
 
 ### 清理痕迹
 在目前的安全状态下，安全法规定日志需保存6个月以上，且SIEM针对安全信息和事件的管理，也才采集数据，在绕过检测采集以及心跳线检测，无法规避
-![e0a290872de73a286740cbf8b5238b98.png](en-resource://database/8864:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9.png)
 
 Linux系统中存在用户态与内核态，以上检测大部分从用户态的攻击角度进行检测，一个恶意的软件，总结三点：隐藏、操纵、收集数据，hook通用技术如下：
-![5fee8f71a5c16371b2d55e5109e72382.png](en-resource://database/8866:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/hook%E9%80%9A%E7%94%A8%E6%8A%80%E6%9C%AF.png)
 1.  可信任Shell——使用静态编译的二进制文件：lsof、stat、strace、last、……
 2.  检测工具和脚本：rkhunter, chkrootkit, OSSEC
 3.  LiveCD——DEFT、Second Look、 Helix
@@ -150,7 +150,7 @@ Linux系统中存在用户态与内核态，以上检测大部分从用户态的
 5.  直接调试裸设备：debugFS
 ### 检测
 在检测上，目前通过编写了1一系列的auditd规则，获取实践，检测可在传输前如nxlog对数据进行正则匹配、简单关联分析检测，也可在SOC平台上检测，视实际情况而定
-![fe13680f38baa49a4664f65de841d713.png](en-resource://database/8878:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E6%A3%80%E6%B5%8B.png)
 
 ## 0x05：结束语
 从视觉角度来看，MITRE ATT＆CK矩阵按照一种易于理解的格式将所有已知的战术和技术进行排列，一个攻击序列按照战术，至少包含一个技术，并且通过从左侧（初始访问）向右侧（影响）移动，就构建了一个完整的攻击序列。
