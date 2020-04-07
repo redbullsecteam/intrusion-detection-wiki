@@ -24,16 +24,17 @@
 [linux安全](https://github.com/redbullsecteam/intrusion-detection-wiki/tree/master/linux-intrusion-detection-wiki)
 [安全架构](https://github.com/redbullsecteam/intrusion-detection-wiki/tree/master/security-Architecture-wiki)
 [移动安全](https://github.com/redbullsecteam/intrusion-detection-wiki/tree/master/mobile-intrusion-detection-wiki)
-
-
-此内容可迭代更新
+[安全资产管理](https://github.com/redbullsecteam/intrusion-detection-wiki/tree/master/Security-Asset-Management)
+[安全运营](https://github.com/redbullsecteam/intrusion-detection-wiki/tree/master/security-Operation-wiki)
+此架构内容会进行迭代更新
 ### 4.提交方式
-   以自由为主，可在自己擅长的领导，带着自己的安全观和独特的见解，亦可在新的领域学习
+   以自由为主，可在自己擅长的领导，带着自己的安全观和独特的见解，亦可在新的领域学习，记录成长之路
    
 
 ## 三、如何加入我们？
 ### 成员介绍
-目前该项目的成员大部分来源于应用安全安全分析安全体系建设，其中核心成团有阿里云、完美世界、安恒信息、奇安信、竞技世界、观安信息，以及志同道合的安全人员，我们也期待更多的不同方向的人员来加入。
+目前该项目的成员大部分来源于应用安全安全分析安全体系建设，其中核心成团有阿里云、完美世界、安恒信息、奇安信、绿盟科技、科大讯飞、竞技世界、观安信息，以及志同道合的安全人员，我们也期待更多的不同方向的人员来加入。
+若您有更好的意见或者其他想做的蓝图，欢迎大家一块交流。
 
 ![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
 
