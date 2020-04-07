@@ -26,7 +26,8 @@
 [移动安全](https://github.com/redbullsecteam/intrusion-detection-wiki/tree/master/mobile-intrusion-detection-wiki)
 [安全资产管理](https://github.com/redbullsecteam/intrusion-detection-wiki/tree/master/Security-Asset-Management)
 [安全运营](https://github.com/redbullsecteam/intrusion-detection-wiki/tree/master/security-Operation-wiki)
-此架构内容会进行迭代更新
+
+此架构以及内容会进行迭代更新
 ### 4.提交方式
    以自由为主，可在自己擅长的领导，带着自己的安全观和独特的见解，亦可在新的领域学习，记录成长之路
    
