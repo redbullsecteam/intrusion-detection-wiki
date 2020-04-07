@@ -107,7 +107,7 @@ auditctl -a exit,always -F arch=b64 -S execve
 ausearch -sc execve | grep /usr/bin/id 
 
 整个过程的执行结果如下：
-![9e5d3aaf3723f5b93f057e0b593d063c.png](en-resource://database/8990:1)
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/audit_execve.png)
 
 
 至于其他的使用方法可以通过 man auditd和 man auditctl来查看。
@@ -133,9 +133,7 @@ cat/boot/config-$(uname-r)|grep^CONFIG_AUDIT
 
 目前常用的 hook 方法是通过修改 sys_call_table（ Linux 系统调用表）来实现，具体原理就是系统在执行系统调用时是通过系统调用号在 sys_call_table中找到相应的函数进行调用，所以只要将 sys_call_table中 execve对应的地址改为我们安装的内核模块中的函数地址即可。
 
-具体的实现细节可参考 YSRC 的这篇关于驭龙 HIDS 如何实现进程监控的文章：https://mp.weixin.qq.com/s/ntE5FNM8UaXQFC5l4iKUUw，这里贴出文章里的一张图方便大家对整个流程有个直观地了解：
-![8a65a1ff7bfdc8f9af95e3f9ff065629.png](en-resource://database/8992:1)
-
+具体的实现细节可参考 YSRC 的这篇关于驭龙 HIDS 如何实现进程监控的文章：`https://mp.weixin.qq.com/s/ntE5FNM8UaXQFC5l4iKUUw`
 
 Demo
 
