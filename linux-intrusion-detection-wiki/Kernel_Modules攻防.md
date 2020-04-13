@@ -36,14 +36,14 @@ Makefile文件
 ```
  
 编译完成之后能够看到模块文件：
-
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/meke_Helloworld.png)
 ### 常见模块功能
 insmod ./hello.ko #加载
 rmmod hello #删除
 rmmod ./hello.ko#删除
 lsmod查看模块是否被加载
  
-
+![](https://github.com/redbullsecteam/intrusion-detection-wiki/blob/master/image/insmod_Helloworld.png)
  
 
 ## 监控
@@ -95,11 +95,16 @@ delete_module（）系统调用试图消除查明的未使用的可加载模块�
 限制对root帐户的访问，并通过适当的特权分离和限制特权升级机会来防止用户加载内核模块和扩展
 
 ##参考文献：
+```
 http://www.man7.org/linux/man-pages/man2/finit_module.2.html
+
 https://linux.die.net/man/2/delete_module
+
 https://www.cnblogs.com/pengdonglin137/p/3494646.html
+
 https://www.freebuf.com/articles/system/186012.html
 
+```
  
 
 
